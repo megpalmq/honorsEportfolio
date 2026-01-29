@@ -1,0 +1,500 @@
+// ----------------------
+// Variables & Mixins
+// ----------------------
+$bg: #f3f3f1;
+$accent: #eeb3f0; // pink scribble
+$text: #0b0b0b;
+$paper-gray: #e6e4e2;
+
+$max-width: 1400px;
+
+@mixin responsive-font($min-size, $preferred, $max-size) {
+  font-size: clamp(#{$min-size}, #{$preferred}, #{$max-size});
+}
+
+// ----------------------
+// Base reset
+// ----------------------
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family:
+    "Montserrat",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  color: $text;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0.5px, transparent 0.5px) 0
+      0/3px 3px,
+    linear-gradient(90deg, rgba(0, 0, 0, 0.01) 0.5px, transparent 0.5px) 0 0/5px
+      5px,
+    $bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: garetB;
+  src: url(../fonts/Garet-Book.ttf);
+}
+@font-face {
+  font-family: garet;
+  src: url(../fonts/Garet-Heavy.ttf);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 28px 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 20;
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      margin-left: 34px;
+      text-decoration: none;
+      color: $text;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-size: 16px;
+      padding: 6px 4px;
+      transition:
+        opacity 180ms ease,
+        transform 220ms ease;
+
+      &:hover {
+        opacity: 0.75;
+        transform: translateY(-2px);
+        color: #eeb3f0;
+        font-size: 20px;
+        transition: ease 0.5s;
+      }
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  background-image: url(../images/background.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+
+  // scribbles (your PNG backgrounds)
+  .scribble {
+    position: absolute;
+    color: $accent;
+    opacity: 0.85;
+    pointer-events: none;
+    user-select: none;
+    transform-origin: center;
+    mix-blend-mode: normal;
+    filter: saturate(1.05);
+    will-change: transform, opacity, filter;
+  }
+
+  .scribble--left {
+    left: 4%;
+    top: -15%;
+    background-image: url(../images/megan.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 900px;
+    height: 900px;
+    transform: rotate(-4deg);
+    z-index: 1;
+  }
+
+  .scribble--right {
+    right: -3%;
+    bottom: -60%;
+    background-image: url(../images/2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 1200px;
+    height: 1200px;
+    transform: rotate(-4deg);
+    opacity: 0.75;
+    z-index: 1;
+  }
+
+  .title-wrap {
+    width: 100%;
+    max-width: $max-width;
+    text-align: left;
+    padding: 40px 4%;
+    position: relative;
+    z-index: 6;
+    display: block;
+  }
+
+  .eyebrow {
+    font-family: garet;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 28px;
+    margin-bottom: 1px;
+    margin-left: 70px;
+    opacity: 0.98;
+  }
+
+  .portfolio {
+    font-weight: 900;
+    line-height: 0.88;
+    display: inline-block;
+    position: relative;
+    letter-spacing: -2px;
+    margin: 0 auto;
+    font-size: 200px;
+    display: flex;
+    font-family: garet;
+    color: $text;
+    margin-left: 60px;
+  }
+
+  .year-bubble {
+    position: absolute;
+    right: 0%;
+    top: -12%;
+    transform: rotate(20deg);
+    font-weight: 700;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-family: garet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 64px;
+    border-radius: 50%;
+    color: $text;
+    span {
+      display: inline-block;
+      transform-origin: bottom center;
+    }
+    span:nth-child(1) {
+      transform: rotate(-10deg) translateY(-6px);
+    }
+    span:nth-child(2) {
+      transform: rotate(2deg) translateY(-10px);
+    }
+    span:nth-child(3) {
+      transform: rotate(12deg) translateY(-10px);
+      color: #eeb3f0;
+    }
+    span:nth-child(4) {
+      transform: rotate(24deg) translateY(-6px);
+      color: #eeb3f0;
+    }
+  }
+
+  // sparkles
+  .sparkle {
+    position: absolute;
+    z-index: 7;
+    opacity: 0.95;
+    width: 150px;
+    height: 150px;
+  }
+
+  .sparkle--1 {
+    right: 85%;
+    top: 55%;
+    transform: translateY(-40px) scale(1.1);
+  }
+  .sparkle--2 {
+    right: 17%;
+    top: 25%;
+    transform: scale(0.9);
+  }
+
+  .sparkle-path {
+    stroke: $text;
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    transition: stroke-dashoffset 1100ms cubic-bezier(0.22, 0.85, 0.32, 1);
+  }
+}
+$ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$ease-out: cubic-bezier(0.22, 0.85, 0.32, 1);
+$short: 360ms;
+$medium: 700ms;
+$long: 1100ms;
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.86) translateY(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04) translateY(-6px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+}
+@keyframes floatTiny {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes sparkleTwinkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-6deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) rotate(0deg);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1) rotate(4deg);
+  }
+}
+
+// initial hidden states (before .is-loaded)
+header nav {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    transform $short $ease-out,
+    opacity $short $ease-out;
+}
+.hero {
+  .scribble {
+    opacity: 0;
+    transform: scale(0.96) translateY(18px) rotate(-3deg);
+    transition:
+      transform $medium $ease-out-back,
+      opacity $medium $ease-out,
+      filter $medium;
+    filter: blur(0.2px) saturate(1.05);
+  }
+  .scribble--left {
+    transition-delay: 120ms;
+  }
+  .scribble--right {
+    transition-delay: 200ms;
+  }
+
+  .title-wrap {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+    transition: all $medium $ease-out;
+  }
+  .portfolio {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+    transition:
+      transform $long $ease-out-back,
+      opacity $long $ease-out;
+  }
+  .year-bubble {
+    opacity: 0;
+    transform: scale(0.2) rotate(-20deg);
+  }
+
+  .sparkle {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: all 420ms $ease-out;
+  }
+}
+
+// loaded state (sequence + loops)
+body.is-loaded {
+  header nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero {
+    .scribble {
+      opacity: 1;
+      transform: scale(1) translateY(0) rotate(0);
+      filter: none;
+
+      &.scribble--left {
+        animation: floatSlow 8s ease-in-out infinite;
+        animation-delay: 800ms;
+      }
+      &.scribble--right {
+        animation: floatSlow 9.5s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+    }
+
+    .title-wrap {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      transition-delay: 420ms;
+    }
+
+    .portfolio {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      transition-delay: 600ms;
+      animation: popIn $medium $ease-out-back 1;
+    }
+
+    .year-bubble {
+      opacity: 1;
+      transform: scale(1) rotate(20deg);
+      transition-delay: 780ms;
+    }
+
+    // sparkle entrance (draw + twinkle)
+    .sparkle--1 {
+      opacity: 1;
+      transition-delay: 920ms;
+
+      .sparkle-path {
+        stroke-dashoffset: 0;
+        transition-delay: 120ms;
+      }
+      &.loop {
+        animation: sparkleTwinkle 3.8s ease-in-out infinite 1900ms;
+      }
+    }
+
+    .sparkle--2 {
+      opacity: 1;
+      transition-delay: 980ms;
+
+      .sparkle-path {
+        stroke-dashoffset: 0;
+        transition-delay: 200ms;
+      }
+      &.loop {
+        animation: sparkleTwinkle 4.4s ease-in-out infinite 2200ms;
+      }
+    }
+  }
+}
+
+// ----------------------
+// Optional "replay" helper (if you later add a button)
+// ----------------------
+.is-loading {
+  pointer-events: none;
+}
+
+// ----------------------
+// Reduced motion
+// ----------------------
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  body.is-loaded {
+    header nav,
+    .hero .scribble,
+    .hero .title-wrap,
+    .hero .portfolio,
+    .hero .year-bubble,
+    .hero .sparkle {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .sparkle-path {
+      stroke-dashoffset: 0 !important;
+      transition: none !important;
+    }
+  }
+}
+
+// ----------------------
+// Responsive tweaks
+// ----------------------
+@media (max-width: 760px) {
+  header {
+    padding: 18px;
+  }
+
+  header nav a {
+    margin-left: 18px;
+    font-size: 14px;
+  }
+
+  .scribble--left {
+    width: 520px;
+    height: 520px;
+    left: -30%;
+    top: -12%;
+    transform: rotate(-4deg);
+  }
+  .scribble--right {
+    width: 720px;
+    height: 720px;
+    right: -12%;
+    bottom: -28%;
+    opacity: 0.7;
+  }
+
+  .portfolio {
+    font-size: clamp(64px, 18vw, 140px);
+    margin-left: 24px;
+  }
+  .eyebrow {
+    margin-left: 24px;
+    font-size: 20px;
+  }
+  .year-bubble {
+    display: none;
+  }
+}
