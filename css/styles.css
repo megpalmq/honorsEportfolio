@@ -62,7 +62,17 @@ header nav {
   justify-content: flex-end;
   align-items: center;
 }
-header nav a {
+header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  position: relative;
+}
+header nav ul li a {
   margin-left: 34px;
   text-decoration: none;
   color: #0b0b0b;
@@ -72,12 +82,57 @@ header nav a {
   padding: 6px 4px;
   transition: opacity 180ms ease, transform 220ms ease;
 }
-header nav a:hover {
+header nav ul li a:hover {
   opacity: 0.75;
   transform: translateY(-2px);
-  color: #eeb3f0;
-  font-size: 20px;
+  color: #c68ec8;
+  font-weight: 900;
   transition: ease 0.5s;
+}
+header nav ul li.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -50px;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  margin-top: 10px;
+  min-width: 180px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* HIDDEN by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 0s linear 220ms;
+}
+header nav ul li.dropdown .dropdown-menu li {
+  width: 100%;
+}
+header nav ul li.dropdown .dropdown-menu li a {
+  margin-left: 0;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: #0b0b0b;
+  display: block;
+}
+header nav ul li.dropdown .dropdown-menu li a:hover {
+  background-color: rgba(238, 179, 240, 0.35);
+  transform: none;
+  font-size: 14px;
+}
+header nav ul li.dropdown {
+  /* VISIBLE on hover of the li.dropdown */
+}
+header nav ul li.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .hero {
@@ -424,5 +479,145 @@ body.is-loaded .hero .sparkle--2.loop {
   }
   .year-bubble {
     display: none;
+  }
+}
+:root {
+  --bg-paper: #f6f5f3;
+  --accent: #eeb3f0;
+  --text: #0b0b0b;
+  --muted: #333;
+}
+
+/* container */
+#artifact1 {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url("../images/background.jpeg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.hero-ghost {
+  font-family: garet, sans-serif;
+  font-weight: 800;
+  font-size: 18vw;
+  line-height: 0.9;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.95);
+  position: fixed;
+  top: 20%;
+  right: -1.5%;
+  transform: translateZ(0);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-ghost span {
+  display: block;
+  font-weight: 900;
+  text-align: end;
+}
+
+/* ribbon */
+.ribbon {
+  position: absolute;
+  top: 16%;
+  left: 0;
+  width: 120%;
+  height: 160px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* doodle */
+.doodle {
+  position: absolute;
+  left: 35px;
+  top: 45%;
+  width: 84px;
+  height: 160px;
+  z-index: 7;
+  opacity: 0.95;
+}
+
+.doodle svg {
+  overflow: visible;
+}
+
+.intro {
+  z-index: 1000;
+  max-width: 1000px;
+  margin-top: 58vh;
+  padding: 28px 2rem;
+  margin-left: 100px;
+  color: var(--text);
+}
+.intro p {
+  color: var(--muted, #333);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 8px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.container .original {
+  color: var(--muted, #333);
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: garetB;
+  font-weight: 200;
+  padding: 30px;
+}
+.container .original h2 {
+  font-family: garet;
+}
+.container .newState {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 2rem;
+  font-family: garetB;
+  font-weight: 200;
+  background-color: var(--accent);
+  border-radius: 40px;
+  padding: 30px;
+  color: var(--text);
+}
+.container .newState h2 {
+  font-family: garet;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .hero-ghost {
+    font-size: 36vw;
+    top: -20%;
+    right: -16%;
+  }
+  .intro {
+    margin-top: 36vh;
+    padding: 0 3rem;
+  }
+  .doodle {
+    left: 18px;
+    top: 30%;
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 560px) {
+  .hero {
+    padding: 80px 24px;
+  }
+  .hero-ghost {
+    display: none;
+  }
+  .intro {
+    margin-top: 18vh;
   }
 }

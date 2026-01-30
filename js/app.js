@@ -1,31 +1,24 @@
-function changeRoute() {
+import { changePage } from "../model/model.js";
+
+function route() {
   let hashTag = window.location.hash;
   let pageID = hashTag.replace("#", "");
-
-  // DEFAULT TO HOME
-  if (pageID === "") {
-    pageID = "home";
-  }
-
-  const pagePath = `pages/${pageID}/${pageID}.html`;
-
-  console.log("Loading:", pagePath);
-
-  $.get(pagePath, function (data) {
-    $("#app").fadeOut(150, function () {
-      $(this).html(data).fadeIn(250);
-      window.scrollTo(0, 0);
-    });
-  }).fail(function () {
-    $("#app").html(`<h2>Page not found: ${pageID}</h2>`);
-  });
+  console.log("route", pageID);
+  changePage(pageID);
 }
 
-function initURLListener() {
-  $(window).on("hashchange", changeRoute);
-  changeRoute(); // ← THIS is what auto-loads home
+function initSite() {
+  $(window).on("hashchange", route);
+  // Load home page on initial load if no hash
+  if (!window.location.hash) {
+    changePage("home");
+  } else {
+    route();
+  }
+  // Add is-loaded class to trigger animations
+  $(document.body).addClass("is-loaded");
 }
 
 $(document).ready(function () {
-  initURLListener();
+  initSite();
 });

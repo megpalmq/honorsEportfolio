@@ -13,5 +13,8 @@
   "type": "commonjs",
   "devDependencies": {
     "sass": "^1.97.3"
+  },
+  "dependencies": {
+    "jquery": "^4.0.0"
   }
 }
