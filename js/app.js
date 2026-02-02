@@ -19,6 +19,7 @@ function initSite() {
   $(document.body).addClass("is-loaded");
 }
 
+// Global scroll listener for about page fade effect
 $(document).ready(function () {
   initSite();
 });

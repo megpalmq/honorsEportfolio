@@ -483,29 +483,30 @@ body.is-loaded .hero .sparkle--2.loop {
 }
 #about {
   min-height: 100vh;
+  max-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
   background-image: url("../images/background.jpeg");
   background-size: contain;
   background-position: center;
   background-repeat: repeat;
 }
-
-.aboutME {
+#about .aboutME {
   font-family: garet;
   font-size: 250px;
   width: 700px;
   position: fixed;
+  z-index: 30;
 }
-
-.aboutMegan img {
+#about .aboutMegan img {
   width: 800px;
-  position: absolute;
+  position: fixed;
   top: 60%;
   left: 30%;
   transform: translate(-50%, -50%);
+  z-index: 500;
 }
-
 @keyframes flyInFromLeft {
   from {
     transform: translateX(-100vw);
@@ -516,12 +517,12 @@ body.is-loaded .hero .sparkle--2.loop {
     opacity: 1;
   }
 }
-.aboutme {
+#about .aboutme {
   flex-direction: column;
   font-family: garetB;
   font-weight: 200;
   padding: 30px;
-  width: 50%;
+  width: 45%;
   display: flex;
   position: absolute;
   top: 45%;
@@ -529,18 +530,35 @@ body.is-loaded .hero .sparkle--2.loop {
   margin-left: auto;
   margin-right: 50px;
   animation: flyInFromLeft 1.5s ease-out;
+  z-index: 5;
 }
-.aboutme .socials {
+#about .aboutme .socials {
   display: flex;
   gap: 30px;
 }
-.aboutme .socials a {
+#about .aboutme .socials a {
   text-decoration: none;
   color: #eeb3f0;
 }
-.aboutme .socials a i {
+#about .aboutme .socials a i {
   font-size: 30px;
   text-decoration: none;
+}
+#about .band {
+  width: 50%;
+  right: 0%;
+  height: 50px;
+  position: absolute;
+  bottom: -150px;
+  z-index: 600;
+}
+#about .band h1 {
+  font-size: 80px;
+  position: absolute;
+  text-align: right;
+  color: #eeb3f0;
+  margin-top: 100px;
+  opacity: 0;
 }
 
 :root {

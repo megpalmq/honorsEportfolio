@@ -1,63 +1,85 @@
 #about {
   min-height: 100vh;
+  max-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
   background-image: url("../images/background.jpeg");
   background-size: contain;
   background-position: center;
   background-repeat: repeat;
-}
-.aboutME {
-  font-family: garet;
-  font-size: 250px;
-  width: 700px;
-  position: fixed;
-}
-.aboutMegan {
-  img {
-    width: 800px;
-    position: absolute;
-    top: 60%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-  }
-}
 
-@keyframes flyInFromLeft {
-  from {
-    transform: translateX(-100vw);
-    opacity: 0;
+  .aboutME {
+    font-family: garet;
+    font-size: 250px;
+    width: 700px;
+    position: fixed;
+    z-index: 30;
   }
-  to {
-    transform: translateX(0);
-    opacity: 1;
+  .aboutMegan {
+    img {
+      width: 800px;
+      position: fixed;
+      top: 60%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      z-index: 500;
+    }
   }
-}
 
-.aboutme {
-  flex-direction: column;
-  font-family: garetB;
-  font-weight: 200;
-  padding: 30px;
-  width: 50%;
-  display: flex;
-  position: absolute;
-  top: 45%;
-  right: 0%;
-  margin-left: auto;
-  margin-right: 50px;
-  animation: flyInFromLeft 1.5s ease-out;
-  .socials {
+  @keyframes flyInFromLeft {
+    from {
+      transform: translateX(-100vw);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .aboutme {
+    flex-direction: column;
+    font-family: garetB;
+    font-weight: 200;
+    padding: 30px;
+    width: 45%;
     display: flex;
-    gap: 30px;
-    a {
-      text-decoration: none;
-      color: #eeb3f0;
-
-      i {
-        font-size: 30px;
+    position: absolute;
+    top: 45%;
+    right: 0%;
+    margin-left: auto;
+    margin-right: 50px;
+    animation: flyInFromLeft 1.5s ease-out;
+    z-index: 5;
+    .socials {
+      display: flex;
+      gap: 30px;
+      a {
         text-decoration: none;
+        color: #eeb3f0;
+
+        i {
+          font-size: 30px;
+          text-decoration: none;
+        }
       }
+    }
+  }
+  .band {
+    width: 50%;
+    right: 0%;
+    height: 50px;
+    position: absolute;
+    bottom: -150px;
+    z-index: 600;
+    h1 {
+      font-size: 80px;
+      position: absolute;
+      text-align: right;
+      color: #eeb3f0;
+      margin-top: 100px;
+      opacity: 0;
     }
   }
 }
