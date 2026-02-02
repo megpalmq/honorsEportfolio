@@ -5,11 +5,46 @@
   --muted: #333;
 }
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* container */
 #artifact1 {
   min-height: 100vh;
+  max-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
   background-image: url("../images/background.jpeg");
   background-size: contain;
   background-position: center;
@@ -28,6 +63,7 @@
   transform: translateZ(0);
   pointer-events: none;
   z-index: 1;
+  animation: slideInFromRight 0.8s ease-out;
 }
 .hero-ghost span {
   display: block;
@@ -44,6 +80,7 @@
   height: 160px;
   z-index: 4;
   pointer-events: none;
+  animation: slideInLeft 0.8s ease-out 0.2s backwards;
 }
 
 /* doodle */
@@ -55,6 +92,7 @@
   height: 160px;
   z-index: 7;
   opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.3s backwards;
 }
 .doodle svg {
   overflow: visible;
@@ -68,6 +106,7 @@
   padding: 28px 2rem;
   margin-left: 100px;
   color: var(--text);
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
   p {
     color: var(--muted, #333);
     font-size: 18px;
@@ -91,6 +130,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
+    opacity: 0;
     h2 {
       font-family: garet;
       grid-column: 1 / -1;
@@ -120,6 +160,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
+    opacity: 0;
     h2 {
       font-family: garet;
       grid-column: 1 / -1;

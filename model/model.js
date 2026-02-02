@@ -57,5 +57,57 @@ function setupPageListeners(pageName) {
           bandH1.css("opacity", bandOpacity);
         }
       });
+  } else if (pageName === "artifact1") {
+    $("#artifact1")
+      .off("scroll")
+      .on("scroll", function () {
+        const scrolled = $(this).scrollTop();
+        const container = $(".container");
+        const intro = $(".intro");
+        const original = $(".original");
+        const newState = $(".newState");
+
+        // Fade in container as you scroll
+        if (container.length) {
+          const containerOpacity = Math.min(1, scrolled / 200);
+          container.css("opacity", containerOpacity);
+        }
+
+        // Fade out and move intro as you scroll
+        if (intro.length) {
+          const introOpacity = Math.max(0, 1 - scrolled / 150);
+          const introTranslate = scrolled * 0.3;
+          intro.css({
+            opacity: introOpacity,
+            transform: `translateY(${introTranslate}px)`,
+          });
+        }
+
+        // Animate original section
+        if (original.length) {
+          const originalOpacity = Math.min(
+            1,
+            Math.max(0, (scrolled - 100) / 150),
+          );
+          const originalTranslate = Math.max(0, 30 - (scrolled - 100) * 0.15);
+          original.css({
+            opacity: originalOpacity,
+            transform: `translateY(${originalTranslate}px)`,
+          });
+        }
+
+        // Animate newState section
+        if (newState.length) {
+          const newStateOpacity = Math.min(
+            1,
+            Math.max(0, (scrolled - 300) / 150),
+          );
+          const newStateTranslate = Math.max(0, 30 - (scrolled - 300) * 0.15);
+          newState.css({
+            opacity: newStateOpacity,
+            transform: `translateY(${newStateTranslate}px)`,
+          });
+        }
+      });
   }
 }
