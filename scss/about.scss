@@ -1,0 +1,63 @@
+#about {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url("../images/background.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+}
+.aboutME {
+  font-family: garet;
+  font-size: 250px;
+  width: 700px;
+  position: fixed;
+}
+.aboutMegan {
+  img {
+    width: 800px;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes flyInFromLeft {
+  from {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.aboutme {
+  flex-direction: column;
+  font-family: garetB;
+  font-weight: 200;
+  padding: 30px;
+  width: 50%;
+  display: flex;
+  position: absolute;
+  top: 45%;
+  right: 0%;
+  margin-left: auto;
+  margin-right: 50px;
+  animation: flyInFromLeft 1.5s ease-out;
+  .socials {
+    display: flex;
+    gap: 30px;
+    a {
+      text-decoration: none;
+      color: #eeb3f0;
+
+      i {
+        font-size: 30px;
+        text-decoration: none;
+      }
+    }
+  }
+}

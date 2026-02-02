@@ -11,7 +11,8 @@
   position: relative;
   overflow-x: hidden;
   background-image: url("../images/background.jpeg");
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
   background-repeat: repeat;
 }
 .hero-ghost {
@@ -99,6 +100,7 @@
     }
     ._2023 {
       grid-column: 2;
+      width: 300px;
       img {
         width: 300px;
         display: block;
