@@ -87,8 +87,22 @@
     font-family: garetB;
     font-weight: 200;
     padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
     h2 {
       font-family: garet;
+      grid-column: 1 / -1;
+    }
+    p {
+      grid-column: 1;
+    }
+    ._2023 {
+      grid-column: 2;
+      img {
+        width: 300px;
+        display: block;
+      }
     }
   }
   .newState {
@@ -101,8 +115,22 @@
     border-radius: 40px;
     padding: 30px;
     color: var(--text);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
     h2 {
       font-family: garet;
+      grid-column: 1 / -1;
+    }
+    p {
+      grid-column: 1;
+    }
+    ._2026 {
+      grid-column: 2;
+      img {
+        width: 300px;
+        display: block;
+      }
     }
   }
 }

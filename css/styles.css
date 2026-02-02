@@ -574,9 +574,23 @@ body.is-loaded .hero .sparkle--2.loop {
   font-family: garetB;
   font-weight: 200;
   padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
 }
 .container .original h2 {
   font-family: garet;
+  grid-column: 1/-1;
+}
+.container .original p {
+  grid-column: 1;
+}
+.container .original ._2023 {
+  grid-column: 2;
+}
+.container .original ._2023 img {
+  width: 300px;
+  display: block;
 }
 .container .newState {
   font-size: 18px;
@@ -588,9 +602,23 @@ body.is-loaded .hero .sparkle--2.loop {
   border-radius: 40px;
   padding: 30px;
   color: var(--text);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
 }
 .container .newState h2 {
   font-family: garet;
+  grid-column: 1/-1;
+}
+.container .newState p {
+  grid-column: 1;
+}
+.container .newState ._2026 {
+  grid-column: 2;
+}
+.container .newState ._2026 img {
+  width: 300px;
+  display: block;
 }
 
 /* responsive */
