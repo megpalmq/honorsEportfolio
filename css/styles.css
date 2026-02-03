@@ -46,6 +46,10 @@ body {
   font-family: garet;
   src: url(../fonts/Garet-Heavy.ttf);
 }
+@font-face {
+  font-family: garetR;
+  src: url(../fonts/garetR.ttf);
+}
 header {
   position: absolute;
   top: 0;
@@ -500,7 +504,7 @@ body.is-loaded .hero .sparkle--2.loop {
   z-index: 30;
 }
 #about .aboutMegan img {
-  width: 800px;
+  width: 550px;
   position: fixed;
   top: 60%;
   left: 30%;
@@ -519,7 +523,7 @@ body.is-loaded .hero .sparkle--2.loop {
 }
 #about .aboutme {
   flex-direction: column;
-  font-family: garetB;
+  font-family: garetR;
   font-weight: 200;
   padding: 30px;
   width: 45%;
@@ -531,6 +535,9 @@ body.is-loaded .hero .sparkle--2.loop {
   margin-right: 50px;
   animation: flyInFromLeft 1.5s ease-out;
   z-index: 5;
+}
+#about .aboutme h2 {
+  font-family: garet;
 }
 #about .aboutme .socials {
   display: flex;
@@ -556,9 +563,9 @@ body.is-loaded .hero .sparkle--2.loop {
   font-size: 80px;
   position: absolute;
   text-align: right;
-  color: #eeb3f0;
+  color: #808080;
   margin-top: 100px;
-  opacity: 0;
+  opacity: 0.2;
 }
 
 :root {
@@ -668,17 +675,22 @@ body.is-loaded .hero .sparkle--2.loop {
   padding: 28px 2rem;
   margin-left: 100px;
   color: var(--text);
-  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+  background-color: var(--bg-paper);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 1.6s ease-out 0.4s backwards;
 }
 .intro p {
   color: var(--muted, #333);
   font-size: 18px;
   line-height: 1.6;
+  font-family: garetB;
 }
 
 .container {
   background-color: rgb(255, 255, 255);
   padding: 2rem;
+  margin-top: 100px;
   border-radius: 8px;
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -739,6 +751,31 @@ body.is-loaded .hero .sparkle--2.loop {
 .container .newState ._2026 img {
   width: 300px;
   display: block;
+}
+.container .reflection {
+  margin-top: 2rem;
+  padding: 30px;
+  height: 100vh;
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: garetB;
+  color: var(--muted, #333);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../images/paper.png);
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+.container .reflection h2 {
+  font-family: garet;
+  margin-top: 70px;
+  margin-left: 130px;
+}
+.container .reflection p {
+  width: 80%;
+  margin-left: 130px;
 }
 
 /* responsive */

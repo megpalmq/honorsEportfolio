@@ -18,7 +18,7 @@
   }
   .aboutMegan {
     img {
-      width: 800px;
+      width: 550px;
       position: fixed;
       top: 60%;
       left: 30%;
@@ -40,7 +40,7 @@
 
   .aboutme {
     flex-direction: column;
-    font-family: garetB;
+    font-family: garetR;
     font-weight: 200;
     padding: 30px;
     width: 45%;
@@ -52,6 +52,9 @@
     margin-right: 50px;
     animation: flyInFromLeft 1.5s ease-out;
     z-index: 5;
+    h2 {
+      font-family: garet;
+    }
     .socials {
       display: flex;
       gap: 30px;
@@ -77,9 +80,9 @@
       font-size: 80px;
       position: absolute;
       text-align: right;
-      color: #eeb3f0;
+      color: #808080;
       margin-top: 100px;
-      opacity: 0;
+      opacity: 0.2;
     }
   }
 }

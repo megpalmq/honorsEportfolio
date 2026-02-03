@@ -75,8 +75,10 @@ function setupPageListeners(pageName) {
 
         // Fade out and move intro as you scroll
         if (intro.length) {
-          const introOpacity = Math.max(0, 1 - scrolled / 150);
-          const introTranslate = scrolled * 0.3;
+          const introStart = 150;
+          const introProgress = Math.max(0, scrolled - introStart);
+          const introOpacity = Math.max(0, 1 - introProgress / 450);
+          const introTranslate = introProgress * 0.15;
           intro.css({
             opacity: introOpacity,
             transform: `translateY(${introTranslate}px)`,

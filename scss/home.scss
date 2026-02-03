@@ -50,7 +50,10 @@ body {
   font-family: garet;
   src: url(../fonts/Garet-Heavy.ttf);
 }
-
+@font-face {
+  font-family: garetR;
+  src: url(../fonts/garetR.ttf);
+}
 header {
   position: absolute;
   top: 0;
