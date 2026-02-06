@@ -207,6 +207,31 @@
       margin-left: 130px;
     }
   }
+  .JMButton {
+    margin-top: 60px;
+    padding: 30px 24px;
+    background-color: #eeb3f0;
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: garet;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    display: flex;
+    margin: 0 auto;
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #d99ed9;
+    }
+  }
 }
 
 /* responsive */

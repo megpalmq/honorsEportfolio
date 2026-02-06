@@ -1,0 +1,116 @@
+#journeyMap {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-image: url("../images/background.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+
+  .reflectionJM {
+    margin: 80px;
+    margin-top: 120px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    align-items: center;
+    h1 {
+      grid-column: 1 / -1;
+      font-family: garet;
+    }
+    p {
+      width: 100%;
+    }
+    img {
+      width: 400px;
+      margin-left: 100px;
+      flex-shrink: 1;
+    }
+  }
+  .pinky {
+    width: 100vw;
+    height: 100px;
+    background-color: #eeb3f0;
+    display: flex;
+    h1 {
+      font-size: 143px;
+      color: white;
+      bottom: 37px;
+      position: relative;
+      margin: 0 auto;
+      display: flex;
+    }
+  }
+  .divide {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    .left {
+      background-color: #eeb3f0;
+      height: 80vh;
+      width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        padding: 10px;
+        padding-top: 20px;
+        font-size: 35px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        background-color: white;
+      }
+      img {
+        rotate: -90deg;
+        width: 400px;
+        margin: 0 auto;
+        display: flex;
+        margin-left: 100px;
+      }
+    }
+    .right {
+      background-color: #eeb3f0;
+      height: 80vh;
+      width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      h1 {
+        padding: 10px;
+        padding-top: 20px;
+        font-size: 35px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        background-color: white;
+      }
+      img {
+        rotate: -90deg;
+        width: 400px;
+        margin-left: 100px;
+      }
+    }
+  }
+  .text {
+    h1 {
+      font-family: garet;
+      margin-top: 70px;
+    }
+    margin: 80px;
+    margin-top: 120px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text);
+    display: grid;
+    gap: 40px;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+  }
+}

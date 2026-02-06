@@ -777,6 +777,29 @@ body.is-loaded .hero .sparkle--2.loop {
   width: 80%;
   margin-left: 130px;
 }
+.container .JMButton {
+  margin-top: 60px;
+  padding: 30px 24px;
+  background-color: #eeb3f0;
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: garet;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  display: flex;
+  margin: 0 auto;
+}
+.container .JMButton a {
+  color: var(--text);
+  text-decoration: none;
+}
+.container .JMButton:hover {
+  background-color: #d99ed9;
+}
 
 /* responsive */
 @media (max-width: 980px) {
@@ -805,4 +828,119 @@ body.is-loaded .hero .sparkle--2.loop {
   .intro {
     margin-top: 18vh;
   }
+}
+#journeyMap {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-image: url("../images/background.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+}
+#journeyMap .reflectionJM {
+  margin: 80px;
+  margin-top: 120px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+}
+#journeyMap .reflectionJM h1 {
+  grid-column: 1/-1;
+  font-family: garet;
+}
+#journeyMap .reflectionJM p {
+  width: 100%;
+}
+#journeyMap .reflectionJM img {
+  width: 400px;
+  margin-left: 100px;
+  flex-shrink: 1;
+}
+#journeyMap .pinky {
+  width: 100vw;
+  height: 100px;
+  background-color: #eeb3f0;
+  display: flex;
+}
+#journeyMap .pinky h1 {
+  font-size: 143px;
+  color: white;
+  bottom: 37px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+}
+#journeyMap .divide {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 100px;
+  display: flex;
+}
+#journeyMap .divide .left {
+  background-color: #eeb3f0;
+  height: 80vh;
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#journeyMap .divide .left h1 {
+  padding: 10px;
+  padding-top: 20px;
+  font-size: 35px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: white;
+}
+#journeyMap .divide .left img {
+  rotate: -90deg;
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  margin-left: 100px;
+}
+#journeyMap .divide .right {
+  background-color: #eeb3f0;
+  height: 80vh;
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#journeyMap .divide .right h1 {
+  padding: 10px;
+  padding-top: 20px;
+  font-size: 35px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: white;
+}
+#journeyMap .divide .right img {
+  rotate: -90deg;
+  width: 400px;
+  margin-left: 100px;
+}
+#journeyMap .text h1 {
+  font-family: garet;
+  margin-top: 70px;
+}
+#journeyMap .text {
+  margin: 80px;
+  margin-top: 120px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  display: grid;
+  gap: 40px;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
 }
