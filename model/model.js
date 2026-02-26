@@ -111,5 +111,21 @@ function setupPageListeners(pageName) {
           });
         }
       });
+  } else if (pageName === "artifact2") {
+    $("#artifact2")
+      .off("scroll")
+      .on("scroll", function () {
+        const scrolled = $(this).scrollTop();
+        const heroGhost = $(".hero-ghost");
+
+        // Fade out hero-ghost text on scroll
+        if (heroGhost.length) {
+          const fadeStart = 0;
+          const fadeEnd = 400;
+          let opacity = 1 - (scrolled - fadeStart) / (fadeEnd - fadeStart);
+          opacity = Math.max(0, Math.min(1, opacity));
+          heroGhost.css("opacity", opacity);
+        }
+      });
   }
 }
