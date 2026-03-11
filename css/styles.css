@@ -1426,3 +1426,284 @@ body.is-loaded .hero .sparkle--2.loop {
     font-size: 18px;
   }
 }
+:root {
+  --bg-paper: #f6f5f3;
+  --accent: #eeb3f0;
+  --text: #0b0b0b;
+  --muted: #333;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* container */
+#artifact3 {
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-image: url("../images/background.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.hero-ghost {
+  font-family: garet, sans-serif;
+  font-weight: 800;
+  font-size: 18vw;
+  line-height: 0.9;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.95);
+  position: fixed;
+  top: 20%;
+  right: -1.5%;
+  transform: translateZ(0);
+  pointer-events: none;
+  z-index: 0;
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.hero-ghost span {
+  display: block;
+  font-weight: 900;
+  text-align: end;
+}
+
+/* ribbon */
+.ribbon {
+  position: absolute;
+  top: 16%;
+  left: 0;
+  width: 120%;
+  height: 160px;
+  z-index: 4;
+  pointer-events: none;
+  animation: slideInLeft 0.8s ease-out 0.2s backwards;
+}
+
+/* doodle */
+.doodle {
+  position: absolute;
+  left: 35px;
+  top: 45%;
+  width: 84px;
+  height: 160px;
+  z-index: 7;
+  opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.3s backwards;
+}
+
+.doodle svg {
+  overflow: visible;
+}
+
+.intro {
+  z-index: 1000;
+  max-width: 1000px;
+  margin-top: 58vh;
+  padding: 28px 2rem;
+  margin-left: 100px;
+  color: var(--text);
+  background-color: var(--bg-paper);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 1.6s ease-out 0.4s backwards;
+}
+.intro h2 {
+  font-family: garet;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.intro p {
+  color: var(--muted, #333);
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: garetB;
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  padding: 2rem 4rem;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 8px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.container .project-section {
+  padding: 40px 0;
+  border-bottom: 2px solid #f0f0f0;
+  animation: fadeInUp 1s ease-out backwards;
+}
+.container .project-section:last-of-type {
+  border-bottom: none;
+}
+.container .project-section h2 {
+  font-family: garet;
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.container .project-section p {
+  color: var(--muted, #333);
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: garetB;
+  font-weight: 200;
+  margin-bottom: 16px;
+}
+.container .project-section p a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+.container .project-section p a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+.container .project-section .figma-embed {
+  margin-top: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.container .project-section .figma-embed iframe {
+  display: block;
+  width: 100%;
+  border: none !important;
+}
+.container .project-section .projectImage {
+  margin-top: 28px;
+  width: 100%;
+}
+.container .project-section .projectImage img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+  display: block;
+}
+.container .project-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.container .project-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.container .reflection {
+  margin-top: 60px;
+  padding: 40px;
+  background-color: var(--accent);
+  border-radius: 16px;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+.container .reflection h2 {
+  font-family: garet;
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.container .reflection p {
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: garetB;
+  font-weight: 200;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .hero-ghost {
+    font-size: 36vw;
+    top: -20%;
+    right: -16%;
+  }
+  .intro {
+    margin-top: 36vh;
+    padding: 0 3rem;
+    margin-left: 50px;
+  }
+  .doodle {
+    left: 18px;
+    top: 30%;
+    transform: scale(0.9);
+  }
+  .container {
+    padding: 2rem;
+  }
+}
+@media (max-width: 560px) {
+  .hero-ghost {
+    display: none;
+  }
+  .intro {
+    margin-top: 18vh;
+    margin-left: 0;
+    padding: 20px 1.5rem;
+  }
+  .doodle {
+    display: none;
+  }
+  .ribbon {
+    width: 150%;
+  }
+  .container {
+    padding: 1.5rem;
+    margin-top: 50px;
+  }
+  .container .project-section {
+    padding: 30px 0;
+  }
+  .container .project-section .projectImage {
+    margin-top: 20px;
+  }
+  .container .project-section h2 {
+    font-size: 22px;
+  }
+  .container .project-section p {
+    font-size: 16px;
+  }
+  .container .reflection {
+    padding: 25px;
+  }
+  .container .reflection h2 {
+    font-size: 22px;
+  }
+  .container .reflection p {
+    font-size: 16px;
+  }
+}
