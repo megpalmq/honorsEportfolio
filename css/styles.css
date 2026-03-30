@@ -1734,15 +1734,16 @@ body.is-loaded .hero .sparkle--2.loop {
   }
 }
 .retrospective-section {
-  --retro-ink: #181818;
-  --retro-paper: #fffdf7;
-  --retro-soft: #f6f0e8;
-  --retro-accent: #dc8f57;
-  --retro-border: rgba(24, 24, 24, 0.12);
+  --retro-ink: #0b0b0b;
+  --retro-paper: #fffdfd;
+  --retro-soft: #f7f1f7;
+  --retro-accent: #eeb3f0;
+  --retro-accent-strong: #d99ed9;
+  --retro-border: rgba(11, 11, 11, 0.12);
   min-height: 100vh;
   padding: 128px 5% 88px;
   position: relative;
-  background: radial-gradient(circle at 6% 12%, rgba(220, 143, 87, 0.18) 0, rgba(220, 143, 87, 0) 32%), radial-gradient(circle at 94% 24%, rgba(11, 79, 108, 0.16) 0, rgba(11, 79, 108, 0) 28%), linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 253, 247, 0.94));
+  background: radial-gradient(circle at 6% 12%, rgba(238, 179, 240, 0.22) 0, rgba(238, 179, 240, 0) 32%), radial-gradient(circle at 94% 24%, rgba(238, 179, 240, 0.16) 0, rgba(238, 179, 240, 0) 28%), linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(246, 245, 243, 0.94));
 }
 
 .retrospective-container {
@@ -1762,7 +1763,7 @@ body.is-loaded .hero .sparkle--2.loop {
   letter-spacing: 2px;
   font-size: 13px;
   margin-bottom: 10px;
-  color: #4b3b2f;
+  color: #333;
 }
 
 .retrospective-section h1 {
@@ -1780,7 +1781,7 @@ body.is-loaded .hero .sparkle--2.loop {
   font-family: garetB;
   font-size: 19px;
   line-height: 1.75;
-  color: #2b2b2b;
+  color: var(--muted, #333);
 }
 
 .pull-quote {
@@ -1788,7 +1789,7 @@ body.is-loaded .hero .sparkle--2.loop {
   border-radius: 16px;
   border: 1px solid var(--retro-border);
   padding: 28px;
-  background: linear-gradient(100deg, rgba(220, 143, 87, 0.13), rgba(11, 79, 108, 0.1)), #fff;
+  background: linear-gradient(100deg, rgba(238, 179, 240, 0.25), rgba(238, 179, 240, 0.08)), #fff;
   position: relative;
 }
 .pull-quote p {
@@ -1819,7 +1820,7 @@ body.is-loaded .hero .sparkle--2.loop {
   width: 52px;
   height: 4px;
   border-radius: 50px;
-  background-color: var(--retro-accent);
+  background-color: var(--retro-accent-strong);
   display: block;
   margin-bottom: 12px;
 }
@@ -1835,7 +1836,7 @@ body.is-loaded .hero .sparkle--2.loop {
   font-family: garetB;
   font-size: 16px;
   line-height: 1.68;
-  color: #2f2f2f;
+  color: var(--muted, #333);
 }
 .goal-card p:last-child {
   margin-bottom: 0;
@@ -1878,13 +1879,13 @@ body.is-loaded .hero .sparkle--2.loop {
   line-height: 1.2;
   padding: 16px 18px 0;
   margin-bottom: 8px;
-  color: var(--retro-ink);
+  color: var(--text, #0b0b0b);
 }
 .experience-card p {
   font-family: garetB;
   font-size: 16px;
   line-height: 1.7;
-  color: #2f2f2f;
+  color: var(--muted, #333);
   margin: 0;
   padding: 0 18px 18px;
 }
@@ -1912,7 +1913,7 @@ body.is-loaded .hero .sparkle--2.loop {
   font-family: garetB;
   font-size: 17px;
   line-height: 1.75;
-  color: #2d2d2d;
+  color: var(--muted, #333);
   margin-bottom: 12px;
 }
 
@@ -1925,7 +1926,7 @@ body.is-loaded .hero .sparkle--2.loop {
   margin-bottom: 24px;
   border-radius: 14px;
   padding: 24px;
-  background: linear-gradient(100deg, rgba(11, 79, 108, 0.18), rgba(220, 143, 87, 0.18)), #f5efe6;
+  background: linear-gradient(100deg, rgba(238, 179, 240, 0.38), rgba(217, 158, 217, 0.32)), #f8ecf8;
   border: 1px solid var(--retro-border);
 }
 .quote-strip p {
@@ -1933,7 +1934,7 @@ body.is-loaded .hero .sparkle--2.loop {
   font-family: garet;
   font-size: clamp(20px, 2.8vw, 29px);
   line-height: 1.45;
-  color: #182734;
+  color: var(--text, #0b0b0b);
 }
 
 .closing-section .back-to-top {
@@ -1942,15 +1943,15 @@ body.is-loaded .hero .sparkle--2.loop {
   margin-top: 6px;
   padding: 12px 18px;
   border-radius: 999px;
-  border: 2px solid #163a4f;
-  color: #163a4f;
+  border: 2px solid var(--retro-accent-strong);
+  color: var(--text, #0b0b0b);
   font-family: garet;
   background-color: #fff;
   transition: all 0.2s ease;
 }
 .closing-section .back-to-top:hover {
-  background-color: #163a4f;
-  color: #fff;
+  background-color: var(--retro-accent);
+  color: var(--text, #0b0b0b);
   transform: translateY(-1px);
 }
 
