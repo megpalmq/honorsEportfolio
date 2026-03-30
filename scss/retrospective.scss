@@ -1,86 +1,126 @@
 .retrospective-section {
+  --retro-ink: #181818;
+  --retro-paper: #fffdf7;
+  --retro-soft: #f6f0e8;
+  --retro-accent: #dc8f57;
+  --retro-border: rgba(24, 24, 24, 0.12);
   min-height: 100vh;
-  padding: 130px 5% 80px;
-  background-image: url("../images/background.jpeg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: repeat;
+  padding: 128px 5% 88px;
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 6% 12%,
+      rgba(220, 143, 87, 0.18) 0,
+      rgba(220, 143, 87, 0) 32%
+    ),
+    radial-gradient(
+      circle at 94% 24%,
+      rgba(11, 79, 108, 0.16) 0,
+      rgba(11, 79, 108, 0) 28%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 253, 247, 0.94)
+    );
 }
 
 .retrospective-container {
-  width: min(1200px, 100%);
+  width: min(1160px, 100%);
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--retro-border);
+  border-radius: 18px;
+  padding: clamp(22px, 3.5vw, 44px);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
 }
 
 .retrospective-section .eyebrow {
   font-family: garet;
   text-transform: uppercase;
-  letter-spacing: 1.6px;
-  font-size: 14px;
-  margin-bottom: 14px;
-  color: #3d3d3d;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #4b3b2f;
 }
 
 .retrospective-section h1 {
   font-family: garet;
-  font-size: clamp(40px, 7vw, 92px);
-  line-height: 0.95;
-  margin-bottom: 24px;
-  color: var(--text);
+  font-size: clamp(44px, 7.6vw, 104px);
+  line-height: 0.92;
+  max-width: 11ch;
+  margin-bottom: 26px;
+  color: var(--retro-ink);
 }
 
 .retrospective-section .intro {
-  width: min(920px, 100%);
+  width: min(900px, 100%);
   margin: 0 0 34px;
   font-family: garetB;
-  font-size: 20px;
-  line-height: 1.7;
-  color: var(--muted, #333);
+  font-size: 19px;
+  line-height: 1.75;
+  color: #2b2b2b;
 }
 
 .pull-quote {
-  margin: 0 0 34px;
-  padding: 24px 24px 24px 28px;
-  border-left: 6px solid var(--accent);
-  border-radius: 12px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8f4f8 100%);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin: 0 0 36px;
+  border-radius: 16px;
+  border: 1px solid var(--retro-border);
+  padding: 28px;
+  background:
+    linear-gradient(100deg, rgba(220, 143, 87, 0.13), rgba(11, 79, 108, 0.1)),
+    #fff;
+  position: relative;
 
   p {
     margin: 0;
     font-family: garet;
-    font-size: 24px;
-    line-height: 1.5;
-    color: var(--text);
+    font-size: clamp(22px, 3vw, 33px);
+    line-height: 1.4;
+    color: var(--retro-ink);
   }
 }
 
 .goal-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
 .goal-card {
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--retro-paper);
+  border: 1px solid var(--retro-border);
   border-radius: 14px;
   padding: 22px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 52px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: var(--retro-accent);
+    display: block;
+    margin-bottom: 12px;
+  }
 
   h2 {
     font-family: garet;
-    font-size: 28px;
+    font-size: 25px;
+    line-height: 1.2;
     margin-bottom: 10px;
+    color: var(--retro-ink);
   }
 
   p {
     margin: 0 0 12px;
     font-family: garetB;
-    font-size: 18px;
-    line-height: 1.65;
-    color: var(--muted, #333);
+    font-size: 16px;
+    line-height: 1.68;
+    color: #2f2f2f;
   }
 
   p:last-child {
@@ -90,151 +130,158 @@
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
   margin-bottom: 34px;
 }
 
 .experience-card {
-  background-color: #ffffff;
+  background: #fff;
   border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--retro-border);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
   overflow: hidden;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.11);
+  }
 
   .experience-image {
     width: 100%;
-    aspect-ratio: 16 / 10;
-    background-color: #f5f5f5;
+    aspect-ratio: 16 / 9;
+    background-color: var(--retro-soft);
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      filter: saturate(0.92) contrast(1.03);
     }
   }
 
   h3 {
     font-family: garet;
-    font-size: 25px;
-    padding: 18px 18px 0;
+    font-size: 24px;
+    line-height: 1.2;
+    padding: 16px 18px 0;
     margin-bottom: 8px;
+    color: var(--retro-ink);
   }
 
   p {
     font-family: garetB;
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--muted, #333);
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2f2f2f;
     margin: 0;
-    padding: 0 18px 20px;
+    padding: 0 18px 18px;
   }
 }
 
-.reflection-section {
-  margin-bottom: 26px;
-  padding: 26px;
+.reflection-section,
+.closing-section {
+  margin-bottom: 24px;
+  padding: 24px;
   border-radius: 14px;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  border: 1px solid var(--retro-border);
+}
 
-  h2 {
-    font-family: garet;
-    font-size: 34px;
-    margin-bottom: 12px;
-  }
+.reflection-section h2,
+.closing-section h2 {
+  font-family: garet;
+  font-size: clamp(30px, 3.8vw, 42px);
+  line-height: 1.05;
+  margin-bottom: 12px;
+  color: var(--retro-ink);
+}
 
-  p {
-    font-family: garetB;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--muted, #333);
-    margin-bottom: 12px;
-  }
+.reflection-section p,
+.closing-section p {
+  font-family: garetB;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #2d2d2d;
+  margin-bottom: 12px;
+}
 
-  p:last-child {
-    margin-bottom: 0;
-  }
+.reflection-section p:last-child,
+.closing-section p:last-child {
+  margin-bottom: 0;
 }
 
 .quote-strip {
-  margin-bottom: 26px;
-  border-radius: 12px;
-  padding: 20px;
-  background-color: #eeb3f0;
+  margin-bottom: 24px;
+  border-radius: 14px;
+  padding: 24px;
+  background:
+    linear-gradient(100deg, rgba(11, 79, 108, 0.18), rgba(220, 143, 87, 0.18)),
+    #f5efe6;
+  border: 1px solid var(--retro-border);
 
   p {
     margin: 0;
     font-family: garet;
-    font-size: 23px;
+    font-size: clamp(20px, 2.8vw, 29px);
     line-height: 1.45;
-    color: #1e1e1e;
+    color: #182734;
   }
 }
 
-.closing-section {
-  padding: 24px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #ffffff 0%, #faf9f8 100%);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+.closing-section .back-to-top {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 6px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 2px solid #163a4f;
+  color: #163a4f;
+  font-family: garet;
+  background-color: #fff;
+  transition: all 0.2s ease;
 
-  h2 {
-    font-family: garet;
-    font-size: 34px;
-    margin-bottom: 12px;
-  }
-
-  p {
-    font-family: garetB;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--muted, #333);
-    margin-bottom: 20px;
-  }
-
-  .back-to-top {
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 8px;
-    border: 2px solid #0b0b0b;
-    color: #0b0b0b;
-    font-family: garet;
-    background-color: #ffffff;
-    transition: all 0.2s ease;
-
-    &:hover {
-      background-color: #f0f0f0;
-      transform: translateY(-1px);
-    }
+  &:hover {
+    background-color: #163a4f;
+    color: #fff;
+    transform: translateY(-1px);
   }
 }
 
-@media (max-width: 1000px) {
-  .goal-grid,
+@media (max-width: 1020px) {
+  .goal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .experience-grid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .retrospective-section {
-    padding-top: 120px;
+    padding-top: 114px;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 
-  .retrospective-section .intro {
-    font-size: 18px;
+  .retrospective-container {
+    padding: 22px;
   }
 
-  .pull-quote p,
-  .quote-strip p {
-    font-size: 20px;
+  .goal-grid {
+    grid-template-columns: 1fr;
   }
 
-  .goal-card h2,
-  .reflection-section h2,
-  .closing-section h2 {
-    font-size: 29px;
+  .retrospective-section .intro,
+  .reflection-section p,
+  .closing-section p,
+  .goal-card p,
+  .experience-card p {
+    font-size: 16px;
   }
 }
