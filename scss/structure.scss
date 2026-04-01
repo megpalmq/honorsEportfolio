@@ -3,10 +3,96 @@
   padding: 0;
   box-sizing: border-box;
 }
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
   height: 100%;
   overflow-x: hidden;
+}
+
+// Global animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
 }
 h1,
 h2,
@@ -16,4 +102,106 @@ h5,
 h6,
 p {
   margin-bottom: 16px;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.page-meta {
+  font-family: garet;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #4d4d4d;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.6s ease-out backwards;
+  animation-delay: 0.1s;
+}
+
+.artifact-caption {
+  font-family: garetB;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #383838;
+  margin-top: 10px;
+  animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+#artifact1 .intro p,
+#artifact1 .container p,
+#artifact2 .intro p,
+#artifact2 .projectText p,
+#artifact2 .design p,
+#artifact2 .reflec p,
+#artifact3 .intro p,
+#artifact3 .container p,
+#journeyMap .reflectionJM p,
+#journeyMap .text p,
+#about .aboutme p {
+  max-width: 74ch;
+  text-align: left;
+  animation: fadeInUp 0.7s ease-out backwards;
+}
+
+@media (max-width: 900px) {
+  #artifact1 .intro p,
+  #artifact1 .container p,
+  #artifact2 .intro p,
+  #artifact2 .projectText p,
+  #artifact2 .design p,
+  #artifact2 .reflec p,
+  #artifact3 .intro p,
+  #artifact3 .container p,
+  #journeyMap .reflectionJM p,
+  #journeyMap .text p,
+  #about .aboutme p {
+    max-width: 100%;
+  }
+}
+
+img,
+.projectImage {
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  transition:
+    transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 300ms ease,
+    box-shadow 300ms ease;
+  will-change: transform;
+
+  &:hover {
+    transform: translateY(-6px);
+    filter: brightness(1.05);
+    box-shadow: 0 12px 32px rgba(238, 179, 240, 0.2) !important;
+  }
+}
+
+a {
+  transition: all 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: color, transform;
+}
+
+button,
+.btn {
+  transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, background;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 760px) {
+  .page-meta {
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
+
+  .artifact-caption {
+    font-size: 13px;
+  }
+
+  img:hover,
+  .projectImage:hover {
+    transform: none;
+    box-shadow: none !important;
+  }
 }

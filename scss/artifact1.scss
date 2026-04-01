@@ -50,7 +50,7 @@
   background-position: center;
   background-repeat: repeat;
 }
-.hero-ghost {
+#artifact1 .hero-ghost {
   font-family: garet, sans-serif;
   font-weight: 800;
   font-size: 18vw;
@@ -65,14 +65,14 @@
   z-index: 0;
   animation: slideInFromRight 0.8s ease-out;
 }
-.hero-ghost span {
+#artifact1 .hero-ghost span {
   display: block;
   font-weight: 900;
   text-align: end;
 }
 
 /* ribbon */
-.ribbon {
+#artifact1 .ribbon {
   position: absolute;
   top: 16%;
   left: 0;
@@ -84,7 +84,7 @@
 }
 
 /* doodle */
-.doodle {
+#artifact1 .doodle {
   position: absolute;
   left: 35px;
   top: 45%;
@@ -94,11 +94,11 @@
   opacity: 0.95;
   animation: fadeInUp 0.8s ease-out 0.3s backwards;
 }
-.doodle svg {
+#artifact1 .doodle svg {
   overflow: visible;
 }
 
-.intro {
+#artifact1 .intro {
   // position: relative;
 
   z-index: 1000;
@@ -118,7 +118,7 @@
     font-family: garetB;
   }
 }
-.container {
+#artifact1 .container {
   background-color: rgba(255, 255, 255);
   padding: 2rem;
   margin-top: 100px;
@@ -136,7 +136,8 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
-    opacity: 0;
+    opacity: 1;
+    animation: fadeInUp 0.7s ease-out;
     h2 {
       font-family: garet;
       grid-column: 1 / -1;
@@ -150,6 +151,14 @@
       img {
         width: 300px;
         display: block;
+      }
+      .photo-caption {
+        font-size: 13px;
+        line-height: 1.35;
+        margin-top: 8px;
+        color: #4a4a4a;
+        font-family: garetB;
+        text-align: left;
       }
     }
   }
@@ -166,7 +175,8 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 20px;
-    opacity: 0;
+    opacity: 1;
+    animation: fadeInUp 0.8s ease-out;
     h2 {
       font-family: garet;
       grid-column: 1 / -1;
@@ -179,6 +189,15 @@
       img {
         width: 300px;
         display: block;
+      }
+      .photo-caption {
+        font-size: 13px;
+        line-height: 1.35;
+        margin-top: 8px;
+        color: #3f3f3f;
+        font-family: garetB;
+        text-align: left;
+        max-width: 300px;
       }
     }
   }
@@ -260,25 +279,63 @@
 
 /* responsive */
 @media (max-width: 980px) {
-  .hero-ghost {
+  #artifact1 .hero-ghost {
     font-size: 36vw;
     top: -20%;
     right: -16%;
   }
-  .intro {
-    margin-top: 36vh;
-    padding: 0 3rem;
+  #artifact1 .intro {
+    margin-top: 30vh;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 22px;
   }
-  .doodle {
+  #artifact1 .doodle {
     left: 18px;
     top: 30%;
     transform: scale(0.9);
   }
 
-  .container {
+  #artifact1 .container {
+    padding: 20px;
+    margin-top: 40px;
+
+    .original,
+    .newState {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 22px;
+
+      p {
+        grid-column: 1;
+      }
+
+      ._2023,
+      ._2026 {
+        grid-column: 1;
+        width: 100%;
+        max-width: 420px;
+
+        img {
+          width: 100%;
+          max-width: 320px;
+          height: auto;
+        }
+
+        .photo-caption {
+          max-width: 320px;
+        }
+      }
+    }
+
     .reflection {
+      height: auto;
+      min-height: 0;
+      padding: 24px;
+
       h2 {
         margin-left: 0;
+        margin-top: 24px;
       }
 
       p {
@@ -286,16 +343,122 @@
         margin-left: 0;
       }
     }
+
+    .retroPageButton,
+    .JMButton {
+      width: 100%;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      text-align: center;
+
+      a {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+
+    .JMButton {
+      padding: 18px 16px;
+    }
   }
 }
 @media (max-width: 560px) {
-  .hero {
-    padding: 80px 24px;
+  #artifact1 {
+    max-height: none;
   }
-  .hero-ghost {
+
+  #artifact1 .hero-ghost {
     display: none;
   }
-  .intro {
-    margin-top: 18vh;
+
+  #artifact1 .ribbon {
+    top: 10%;
+    width: 150%;
+    height: 110px;
+    left: -18%;
+  }
+
+  #artifact1 .doodle {
+    display: none;
+  }
+
+  #artifact1 .intro {
+    margin-top: 12vh;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 16px;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.65;
+    }
+  }
+
+  #artifact1 .container {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+
+    .original,
+    .newState,
+    .reflection {
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .original h2,
+    .newState h2,
+    .reflection h2 {
+      font-size: 26px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .original ._2023,
+    .newState ._2026 {
+      max-width: 100%;
+
+      img {
+        max-width: 100%;
+      }
+
+      .photo-caption {
+        max-width: 100%;
+        font-size: 12px;
+      }
+    }
+
+    .reflection {
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      overflow: visible;
+      height: 1000px;
+      padding-bottom: 24px;
+      p {
+        margin-top: 100px;
+      }
+    }
+
+    .retroPageButton {
+      margin-top: 14px;
+      padding: 14px 14px;
+      font-size: 15px;
+    }
+
+    .JMButton {
+      margin-top: 14px;
+      padding: 14px 14px;
+      font-size: 15px;
+    }
   }
 }

@@ -56,7 +56,7 @@
   background-position: center;
   background-repeat: repeat;
 }
-.hero-ghost {
+#artifact2 .hero-ghost {
   font-family: garet, sans-serif;
   font-weight: 800;
   font-size: 18vw;
@@ -70,14 +70,14 @@
   pointer-events: none;
   z-index: 0;
 }
-.hero-ghost span {
+#artifact2 .hero-ghost span {
   display: block;
   font-weight: 900;
   text-align: end;
 }
 
 /* ribbon */
-.ribbon {
+#artifact2 .ribbon {
   position: absolute;
   top: 16%;
   left: 0;
@@ -89,7 +89,7 @@
 }
 
 /* doodle */
-.doodle {
+#artifact2 .doodle {
   position: absolute;
   left: 35px;
   top: 45%;
@@ -99,11 +99,11 @@
   opacity: 0.95;
   animation: fadeInUp 0.8s ease-out 0.3s backwards;
 }
-.doodle svg {
+#artifact2 .doodle svg {
   overflow: visible;
 }
 
-.intro {
+#artifact2 .intro {
   position: relative;
   z-index: 1000;
   max-width: 1000px;
@@ -123,7 +123,7 @@
   }
 }
 
-.projectOver {
+#artifact2 .projectOver {
   position: relative;
   z-index: 1000;
   width: min(1100px, 92%);
@@ -199,7 +199,7 @@
   }
 }
 
-.design {
+#artifact2 .design {
   position: relative;
   z-index: 1000;
   width: min(1100px, 92%);
@@ -241,6 +241,10 @@
       object-fit: contain;
       display: block;
       transition: transform 0.3s ease;
+    }
+
+    .artifact-caption {
+      display: none;
     }
 
     &:hover img {
@@ -301,7 +305,7 @@
   }
 }
 
-.container {
+#artifact2 .container {
   background-color: rgba(255, 255, 255);
   padding: 2rem;
   margin-top: 100px;
@@ -417,7 +421,7 @@
   }
 }
 
-.reflec {
+#artifact2 .reflec {
   margin-top: 2rem;
   padding: 60px 70px;
   min-height: auto;
@@ -449,32 +453,32 @@
 
 /* responsive */
 @media (max-width: 980px) {
-  .hero-ghost {
+  #artifact2 .hero-ghost {
     font-size: 36vw;
     top: -20%;
     right: -16%;
   }
-  .intro {
+  #artifact2 .intro {
     margin-top: 36vh;
     padding: 0 3rem;
   }
-  .projectOver,
-  .design {
+  #artifact2 .projectOver,
+  #artifact2 .design {
     padding: 32px;
   }
-  .design {
+  #artifact2 .design {
     grid-template-columns: 1fr;
   }
-  .design .projectImage {
+  #artifact2 .design .projectImage {
     width: 100%;
     min-width: 0;
     grid-column: 1;
     grid-row: auto;
   }
-  .reflec {
+  #artifact2 .reflec {
     padding: 40px 44px;
   }
-  .doodle {
+  #artifact2 .doodle {
     left: 18px;
     top: 30%;
     transform: scale(0.9);
@@ -484,17 +488,17 @@
   .hero {
     padding: 80px 24px;
   }
-  .hero-ghost {
+  #artifact2 .hero-ghost {
     display: none;
   }
-  .intro {
+  #artifact2 .intro {
     margin-top: 18vh;
   }
-  .projectOver,
-  .design {
+  #artifact2 .projectOver,
+  #artifact2 .design {
     padding: 24px;
   }
-  .reflec {
+  #artifact2 .reflec {
     padding: 28px 24px;
     font-size: 18px;
   }
