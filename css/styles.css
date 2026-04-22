@@ -1359,26 +1359,26 @@ body.is-loaded .hero .sparkle--2.loop {
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
-  padding: 140px 6vw 56px;
+  padding: clamp(320px, 36vw, 430px) 6vw 56px;
   background-image: radial-gradient(circle at 14% 12%, rgba(238, 179, 240, 0.22), transparent 45%), radial-gradient(circle at 84% 24%, rgba(153, 0, 0, 0.12), transparent 38%), linear-gradient(180deg, #f6f5f3 0%, #f2efe9 100%);
 }
 
 #internship .hero-ghost {
-  position: fixed;
-  right: 2%;
-  top: 12%;
+  position: absolute;
+  left: 50%;
+  top: 72px;
   z-index: 0;
-  margin: 0;
-  line-height: 0.9;
-  text-align: right;
-  font-family: garet, sans-serif;
-  font-size: clamp(44px, 9vw, 132px);
-  color: rgba(17, 17, 17, 0.12);
+  width: 100vw;
+  height: clamp(310px, 40vw, 540px);
+  border-radius: 0 0 24px 24px;
+  border: 1px solid rgba(153, 0, 0, 0.32);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.18);
+  background-image: linear-gradient(155deg, rgba(0, 0, 0, 0.1), rgba(153, 0, 0, 0.2)), url("../images/indy.webp");
+  background-size: cover;
+  background-position: center 36%;
+  transform: translateX(-50%);
+  opacity: 0.95;
   pointer-events: none;
-}
-#internship .hero-ghost span {
-  display: block;
-  color: rgba(17, 17, 17, 0.26);
 }
 
 #internship .card {
@@ -1595,12 +1595,13 @@ body.is-loaded .hero .sparkle--2.loop {
 
 @media (max-width: 980px) {
   #internship {
-    padding-top: 120px;
+    padding-top: clamp(280px, 42vw, 360px);
   }
   #internship .hero-ghost {
-    top: 10%;
-    right: 4%;
-    opacity: 0.9;
+    top: 70px;
+    height: clamp(200px, 38vw, 280px);
+    border-radius: 0 0 18px 18px;
+    opacity: 0.88;
   }
   #internship .internship-grid {
     grid-template-columns: 1fr;
@@ -1617,14 +1618,16 @@ body.is-loaded .hero .sparkle--2.loop {
 }
 @media (max-width: 680px) {
   #internship {
-    padding: 106px 18px 36px;
+    padding: 250px 18px 36px;
   }
   #internship .hero-ghost {
     position: absolute;
-    top: 78px;
-    right: 14px;
-    font-size: 20vw;
-    opacity: 0.25;
+    top: 62px;
+    left: 50%;
+    width: 100vw;
+    height: 178px;
+    border-radius: 0 0 14px 14px;
+    opacity: 0.82;
   }
   #internship .internship-intro,
   #internship .internship-reflection,
