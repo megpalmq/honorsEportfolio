@@ -127,5 +127,34 @@ function setupPageListeners(pageName) {
           heroGhost.css("opacity", opacity);
         }
       });
+  } else if (pageName === "internship") {
+    const $internship = $("#internship");
+
+    const revealItems = () => {
+      const containerHeight = $internship.innerHeight() || 0;
+      const scrolled = $internship.scrollTop();
+      const revealTrigger = scrolled + containerHeight * 0.82;
+
+      $("#internship .reveal-item").each(function (index) {
+        const $item = $(this);
+        const top = Number($item.position().top) || 0;
+
+        if (top < revealTrigger) {
+          const delay = Math.min(index * 50, 220);
+          setTimeout(() => {
+            $item.addClass("is-visible");
+          }, delay);
+        }
+      });
+
+      const $heroGhost = $("#internship .hero-ghost");
+      if ($heroGhost.length) {
+        const heroOpacity = Math.max(0.08, 1 - scrolled / 520);
+        $heroGhost.css("opacity", heroOpacity);
+      }
+    };
+
+    $internship.off("scroll").on("scroll", revealItems);
+    revealItems();
   }
 }

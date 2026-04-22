@@ -252,13 +252,14 @@ body.mobile-nav-lock {
 header {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1180px, 100% - 40px);
   border-radius: 20px;
   margin-top: 20px;
-  padding: 18px 60px;
+  padding: 14px 24px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   z-index: 1000;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(247, 244, 241, 0.95));
@@ -267,13 +268,16 @@ header {
   box-shadow: 0 4px 16px rgba(238, 179, 240, 0.08);
 }
 header nav {
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 header nav ul {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1vw, 14px);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -282,13 +286,14 @@ header nav ul li {
   position: relative;
 }
 header nav ul li a {
-  margin-left: 34px;
+  margin-left: 0;
   text-decoration: none;
   color: #0b0b0b;
   font-weight: 700;
-  letter-spacing: 0.6px;
-  font-size: 15px;
-  padding: 8px 12px;
+  letter-spacing: 0.2px;
+  font-size: clamp(13px, 0.95vw, 14px);
+  padding: 8px 10px;
+  white-space: nowrap;
   transition: all 200ms ease;
   position: relative;
 }
@@ -689,11 +694,16 @@ body.is-loaded .hero .sparkle--2.loop {
 }
 @media (max-width: 1200px) {
   header {
-    width: 72%;
-    padding: 16px 32px;
+    width: min(100%, 100% - 24px);
+    left: 50%;
+    padding: 14px 16px;
+  }
+  header nav ul {
+    gap: 6px;
   }
   header nav ul li a {
-    margin-left: 22px;
+    font-size: 12.5px;
+    padding: 7px 8px;
   }
   .hero .portfolio {
     font-size: clamp(120px, 16vw, 170px);
@@ -709,10 +719,11 @@ body.is-loaded .hero .sparkle--2.loop {
 @media (max-width: 980px) {
   header {
     width: calc(100% - 24px);
-    right: 12px;
+    left: 50%;
     margin-top: 12px;
     border-radius: 14px;
     padding: 14px 18px;
+    transform: translateX(-50%);
   }
   header nav ul {
     flex-wrap: wrap;
@@ -1340,6 +1351,307 @@ body.is-loaded .hero .sparkle--2.loop {
   }
   #about .aboutme .socials {
     gap: 20px;
+  }
+}
+#internship {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: 140px 6vw 56px;
+  background-image: radial-gradient(circle at 14% 12%, rgba(238, 179, 240, 0.22), transparent 45%), radial-gradient(circle at 84% 24%, rgba(153, 0, 0, 0.12), transparent 38%), linear-gradient(180deg, #f6f5f3 0%, #f2efe9 100%);
+}
+
+#internship .hero-ghost {
+  position: fixed;
+  right: 2%;
+  top: 12%;
+  z-index: 0;
+  margin: 0;
+  line-height: 0.9;
+  text-align: right;
+  font-family: garet, sans-serif;
+  font-size: clamp(44px, 9vw, 132px);
+  color: rgba(17, 17, 17, 0.12);
+  pointer-events: none;
+}
+#internship .hero-ghost span {
+  display: block;
+  color: rgba(17, 17, 17, 0.26);
+}
+
+#internship .card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+}
+#internship .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-top: 4px solid rgba(153, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+#internship .reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+#internship .reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#internship .internship-intro {
+  max-width: 1080px;
+  padding: 28px 30px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(255, 249, 249, 0.88));
+}
+#internship .internship-intro .internship-intro-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 18px;
+  align-items: stretch;
+}
+#internship .internship-intro .intro-copy {
+  padding-right: 4px;
+}
+#internship .internship-intro .iu-logo-slot {
+  border: 1px solid rgba(153, 0, 0, 0.34);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(153, 0, 0, 0.16), rgba(255, 255, 255, 0.72));
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 18px;
+  margin: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.54), 0 12px 26px rgba(129, 8, 8, 0.16);
+  position: relative;
+}
+#internship .internship-intro .iu-logo-slot::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(153, 0, 0, 0.2);
+  pointer-events: none;
+}
+#internship .internship-intro .iu-logo-slot .iu-logo {
+  width: min(230px, 92%);
+  max-height: 125px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 14px rgba(108, 5, 5, 0.22));
+  transition: transform 220ms ease;
+}
+#internship .internship-intro .iu-logo-slot:hover .iu-logo {
+  transform: scale(1.03);
+}
+#internship .internship-intro h2 {
+  font-family: garet, sans-serif;
+  font-size: clamp(28px, 3.2vw, 46px);
+  margin-bottom: 12px;
+  color: #0f0f0f;
+}
+#internship .internship-intro p {
+  font-family: garetB, sans-serif;
+  font-size: 18px;
+  line-height: 1.62;
+  color: #2c2c2c;
+}
+#internship .internship-intro .page-meta {
+  margin-bottom: 10px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+#internship .internship-grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+#internship .internship-grid .card {
+  padding: 24px;
+  min-height: 250px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+#internship .internship-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.1);
+}
+#internship .internship-grid h3 {
+  font-family: garet, sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #111;
+}
+#internship .internship-grid .system-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#internship .internship-grid .system-head h3 {
+  margin-bottom: 0;
+  font-size: 25px;
+  line-height: 1.2;
+}
+#internship .internship-grid .system-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff0f0;
+  color: #8b0000;
+  border: 1px solid rgba(139, 0, 0, 0.18);
+  flex: 0 0 auto;
+}
+#internship .internship-grid .system-icon i {
+  font-size: 16px;
+}
+#internship .internship-grid .system-media {
+  margin: 14px 0 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+}
+#internship .internship-grid .system-media img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+#internship .internship-grid p,
+#internship .internship-grid li {
+  font-family: garetB, sans-serif;
+  color: #292929;
+  font-size: 17px;
+  line-height: 1.58;
+}
+#internship .internship-grid ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#internship .internship-grid.systems {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#internship .internship-grid.systems .card {
+  min-height: 320px;
+}
+
+#internship .internship-feature {
+  margin-top: 20px;
+  max-width: 1050px;
+  padding: 28px 30px;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.95), rgba(255, 246, 246, 0.88));
+}
+#internship .internship-feature h2 {
+  font-family: garet, sans-serif;
+  font-size: clamp(24px, 2.8vw, 38px);
+  margin-bottom: 10px;
+  color: #111;
+}
+#internship .internship-feature p {
+  font-family: garetB, sans-serif;
+  font-size: 18px;
+  line-height: 1.64;
+  color: #2a2a2a;
+  margin-top: 10px;
+}
+
+#internship .internship-reflection {
+  margin-top: 20px;
+  max-width: 1050px;
+  padding: 28px 30px;
+  border-left: 7px solid #990000;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.95), rgba(255, 247, 247, 0.9));
+}
+#internship .internship-reflection h2 {
+  font-family: garet, sans-serif;
+  font-size: clamp(24px, 2.9vw, 40px);
+  margin-bottom: 10px;
+}
+#internship .internship-reflection p {
+  font-family: garetB, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  color: #2a2a2a;
+}
+
+@media (max-width: 980px) {
+  #internship {
+    padding-top: 120px;
+  }
+  #internship .hero-ghost {
+    top: 10%;
+    right: 4%;
+    opacity: 0.9;
+  }
+  #internship .internship-grid {
+    grid-template-columns: 1fr;
+  }
+  #internship .internship-grid.systems {
+    grid-template-columns: 1fr;
+  }
+  #internship .internship-intro .internship-intro-layout {
+    grid-template-columns: 1fr;
+  }
+  #internship .internship-intro .iu-logo-slot {
+    min-height: 180px;
+  }
+}
+@media (max-width: 680px) {
+  #internship {
+    padding: 106px 18px 36px;
+  }
+  #internship .hero-ghost {
+    position: absolute;
+    top: 78px;
+    right: 14px;
+    font-size: 20vw;
+    opacity: 0.25;
+  }
+  #internship .internship-intro,
+  #internship .internship-reflection,
+  #internship .internship-grid .card {
+    padding: 20px;
+  }
+  #internship .internship-intro .iu-logo-slot {
+    min-height: 155px;
+    padding: 14px;
+  }
+  #internship .internship-intro .iu-logo-slot .iu-logo {
+    max-height: 108px;
+  }
+  #internship .internship-intro p,
+  #internship .internship-reflection p,
+  #internship .internship-grid p,
+  #internship .internship-grid li {
+    font-size: 16px;
+  }
+  #internship .internship-grid h3 {
+    font-size: 24px;
+  }
+  #internship .internship-grid .system-head h3 {
+    font-size: 22px;
+  }
+  #internship .internship-grid .system-media img {
+    height: 132px;
   }
 }
 :root {
